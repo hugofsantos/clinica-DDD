@@ -1,11 +1,11 @@
 package br.ufrn.imd.clinica.domain.exception;
 
-public class BusinessException extends RuntimeException {
-  public BusinessException(String message) {
+public class RegraDeNegocioException extends RuntimeException {
+  public RegraDeNegocioException(String message) {
     super(message);
   }
 
-  public BusinessException(String message, Throwable cause) {
+  public RegraDeNegocioException(String message, Throwable cause) {
     super(message, cause);
   }
 }
