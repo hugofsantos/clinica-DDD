@@ -19,6 +19,12 @@ public final class Telefone {
   }
 
   private void validar(String ddd, String numero) {
+    if(ddd == null)
+      throw new TelefoneInvalidoException("O DDD não pode ser nulo.");
+    
+    if(numero == null)
+      throw new TelefoneInvalidoException("O número do telefone não pode ser nulo.");
+
     if (ddd.isBlank() || numero.isBlank()) {
         throw new TelefoneInvalidoException("DDD e número são obrigatórios.");
     }
