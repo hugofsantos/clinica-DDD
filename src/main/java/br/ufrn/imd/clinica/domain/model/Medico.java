@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 
-import br.ufrn.imd.clinica.domain.exception.AtributosInvalidosMedico;
+import br.ufrn.imd.clinica.domain.exception.AtributosInvalidosMedicoException;
 
 public class Medico {
   private final UUID id;
@@ -16,10 +16,10 @@ public class Medico {
   
   public Medico(String nome, CRM crm, Set<EspecialidadeMedico> especialidadesIniciais) {
     if(nome == null || nome.isBlank())
-      throw new AtributosInvalidosMedico("O nome do médico não pode estar vazio.");
+      throw new AtributosInvalidosMedicoException("O nome do médico não pode estar vazio.");
 
     if(crm == null)
-      throw new AtributosInvalidosMedico("O CRM do médico não pode estar vazio");
+      throw new AtributosInvalidosMedicoException("O CRM do médico não pode estar vazio");
 
     this.id = UUID.randomUUID();
     this.nome = nome;
